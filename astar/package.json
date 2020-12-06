@@ -1,0 +1,74 @@
+{
+  "author": {
+    "name": "Ronny Demera",
+    "email": "rdemear@ucm.es",
+    "url": "https://your-website.com"
+  },
+  "build": {
+    "appId": "com.my-website.my-app",
+    "productName": "PracticaAStar",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "name": "astar",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "dependencies": {
+    "@misterhat/easystarjs": "0.5.3",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.3.2",
+    "@testing-library/user-event": "7.1.2",
+    "astar-algorithm": "0.1.2",
+    "electron-is-dev": "1.1.0",
+    "electron-packager": "14.2.1",
+    "pathfinding": "0.4.18",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-scripts": "3.4.0"
+  },
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "yarn electron-builder -mw"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "0.0.14",
+    "@rescripts/rescript-env": "0.0.12",
+    "concurrently": "5.1.0",
+    "electron": "8.0.1",
+    "electron-builder": "22.4.1",
+    "typescript": "3.8.3",
+    "wait-on": "4.0.0"
+  }
+}
